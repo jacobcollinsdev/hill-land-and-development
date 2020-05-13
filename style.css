@@ -259,12 +259,16 @@ hr{
 
 footer{
     background-color: var(--secondary-bg);
-    text-align: center;
     position: relative;
 }
 .social-nav{
     padding:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
 .social-nav .fa-linkedin, .social-nav .fa-envelope{
     color:white;
     font-size: 3rem;
@@ -275,7 +279,7 @@ footer{
 }
 
 
-footer a{
+footer .reference{
     color:rgb(160, 160, 160);
     font-family: var(--font-secondary);
     font-size: 0.85rem;
@@ -286,8 +290,12 @@ footer a{
     transition:0.5s;
 }
 
-footer a:hover{
+footer .reference:hover{
     color:white;
     transform:scale(1.1,1.1)translateX(-10px);
+}
+
+footer .reference:visited{
+    color:rgb(160, 160, 160);
 }
 
