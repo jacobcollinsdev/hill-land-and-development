@@ -306,7 +306,7 @@ footer .reference:hover{
     transform:scale(1.1,1.1)translateX(-10px);
 }
 
-footer .reference:visited{
+/* footer .reference:visited{
     color:rgb(160, 160, 160);
-}
+} */
 
