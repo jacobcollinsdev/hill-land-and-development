@@ -34,6 +34,10 @@ body{
     box-sizing: border-box;
 }
 
+.page-wrapper{
+    border:3px red solid;
+}
+
 /*Logo banner & nav bar*/
 
 header{
@@ -78,7 +82,7 @@ nav a:hover{
 }
 
 .text-overlay{
-    background-color:rgba(0,0,0,0.5) ;
+    background-color:rgba(0,0,0,0.3) ;
     color:white;
     position: absolute;
     top:50%;
@@ -87,8 +91,10 @@ nav a:hover{
     padding:15px;
     font-family: var(--font-secondary);
     font-size: 1.7rem;
-    /* font-weight:900; */
-    white-space: nowrap;
+    margin:auto;
+    text-align: center;
+    /* white-space: nowrap; */
+    line-height: 150%;
     opacity:0;
     transition:0.5s;
     animation: fade-in 2s ease-in-out 0.5s 1 ;
@@ -112,7 +118,9 @@ nav a:hover{
 }
 
 .opening-statement p{
-    width:50%;
+    /* width:min(800px, 50%); */
+    width:70%;
+    text-align: center;
     font-size:1.5rem;
 }
 
@@ -142,11 +150,19 @@ hr{
     margin:50px 24px;
     background-color: rgb(238, 237, 237);
     font-family:var(--font-primary);
+    border: 2px solid transparent;
+    transition:0.5s;
+    cursor: pointer;
 }
 
 .buying p, .selling p{
     padding:20px;
     margin:0;
+}
+
+.buying:hover, .selling:hover{
+    background-color: white;
+    border: 2px solid var(--secondary-bg);
 }
 
 
@@ -163,7 +179,11 @@ hr{
 .why-us-container{
     display:flex;
     flex-direction:column;
-    width:50%;
+    width:70%;
+}
+
+.why-us-container p:first-of-type{
+    margin-top: 0;
 }
 
 .why-us-container h2{
@@ -193,10 +213,15 @@ hr{
     justify-content: center;
 }
 
+
 .projects-container{
     display:flex;
     flex-direction:column;
-    width:50%;
+    width:70%;
+}
+
+.projects-container h2{
+    margin-bottom: 0;
 }
 
 .project{
@@ -212,13 +237,14 @@ hr{
 .description{
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     width:50%;
     margin-left:1rem;
     margin-right :1rem;
 }
 
 .description h3{
+    margin-top: 0;
     margin-bottom:0;
 }
 .description h4{
@@ -259,11 +285,21 @@ hr{
 .contact-container{
     display:flex;
     flex-direction:column;
-    width:50%;
+    width:70%;
+}
+
+.contact-container p:first-of-type{
+    color:var(--text-clr);
+}
+
+.contact-container p{
+    color: #868686;
+    line-height: 100%;
 }
 
 .fa-phone, .fa-envelope, .fa-building{
     padding-right:10px;
+    color: var(--text-clr);
 }
 
 /*Footer*/
@@ -310,3 +346,70 @@ footer .reference:hover{
     color:rgb(160, 160, 160);
 } */
 
+@media screen and (max-width: 800px){
+    .project{
+        flex-direction: column;
+    }
+
+    .project img, .description{
+        width:100%;
+    }
+
+    .project img{
+        margin-bottom: 1.5rem;
+    }
+
+    .description h3, .description h4{
+        text-align: center;
+    }
+
+    .description{
+        margin-left:0;
+        margin-right :0;
+    }
+}
+
+@media screen and (max-width: 700px){
+    header > img{
+        height: 100px;
+    }
+
+    nav a{
+        font-size: 1rem;
+    }
+
+    .title-image{
+        height:300px;
+    }
+
+    .text-overlay{
+        font-size: 1.2rem;
+    }
+
+
+    h2{
+        font-size: 1.7rem;
+    }
+    p{
+        font-size: 1rem;
+    }
+    .buying-selling{
+        flex-direction: column;
+    }
+
+    .buying, .selling{
+        margin:1.5rem 1.5rem;
+    }
+
+    .selling{
+        margin-bottom: 3rem;
+    }
+
+    .opening-statement p {
+        font-size: 1.3rem;
+    }
+
+    footer .reference{
+        font-size: 0.7rem;
+    }
+}
