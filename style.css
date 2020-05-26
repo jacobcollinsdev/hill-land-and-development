@@ -101,6 +101,7 @@ nav a:hover{
     animation-fill-mode: forwards;
 }
 
+
 @keyframes fade-in{
     0%{
         opacity:0;
@@ -123,6 +124,9 @@ nav a:hover{
     max-width:700px; */
     text-align: center;
     font-size:1.5rem;
+    font-style: italic;
+    font-family: var(--font-primary);
+    color:#979797;
 }
 
 hr{
