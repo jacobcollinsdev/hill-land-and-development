@@ -32,10 +32,25 @@ body{
     padding:0;
     margin:0;
     box-sizing: border-box;
+    position:relative;
+    min-height: 100vh;
 }
 
-.page-wrapper{
-    border:3px red solid;
+.wrapper{
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.opening-statement p{
+    width: min(70%, 700px);
+} 
+
+.why-us-container, .projects-container, .contact-container, .main-container{
+    width: min(70%, 700px);
+    display:flex;
+    flex-direction:column;
 }
 
 /*Logo banner & nav bar*/
@@ -72,13 +87,27 @@ nav a:hover{
 
 /*Intro image and text banner*/
 .welcome-section{
-    position:relative;
+    position:relative; 
 }
+
+/* .selling-section{
+    background-image: url(images/selling-overlay.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:500px;
+}
+
+.cover{
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.3);
+} */
 
 .title-image{
     width:100%;
     height:500px;
     object-fit: cover;
+
 }
 
 .text-overlay{
@@ -89,7 +118,7 @@ nav a:hover{
     left:50%;
     transform:translate(-50%,-50%);
     padding:15px;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: 1.7rem;
     margin:auto;
     text-align: center;
@@ -99,6 +128,22 @@ nav a:hover{
     transition:0.5s;
     animation: fade-in 2s ease-in-out 0.5s 1 ;
     animation-fill-mode: forwards;
+}
+
+.selling-overlay{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    padding:15px 0px;
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin:auto;
+    text-align: center;
+    color:white;
+    background-color: rgba(0,0,0,0.3);
+    border: white 2px solid;
+    width:30%;
 }
 
 
@@ -119,7 +164,6 @@ nav a:hover{
 }
 
 .opening-statement p{
-    width: min(70%, 700px);
     /* width:70%;
     max-width:700px; */
     text-align: center;
@@ -142,8 +186,15 @@ hr{
     justify-content: center;
 }
 
+.buying-selling a{
+    text-decoration: none;
+    color:black;
+    height:100%;
+}
+
 .buying-selling h2{
     margin-bottom:0;
+    text-align: center;
 }
 
 .buying, .selling{
@@ -152,12 +203,12 @@ hr{
     align-items: center;
     justify-content: center;
     width:300px;
+    height:250px;
     margin:50px 24px;
     background-color: rgb(238, 237, 237);
     font-family:var(--font-primary);
     border: 2px solid transparent;
     transition:0.5s;
-    cursor: pointer;
 }
 
 .buying p, .selling p{
@@ -179,14 +230,6 @@ hr{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.why-us-container{
-    display:flex;
-    flex-direction:column;
-    /* width:70%;
-    max-width:700px; */
-    width: min(70%, 700px);
 }
 
 .why-us-container p:first-of-type{
@@ -218,15 +261,6 @@ hr{
     display:flex;
     align-items: center;
     justify-content: center;
-}
-
-
-.projects-container{
-    display:flex;
-    flex-direction:column;
-    /* width:70%;
-    max-width:700px; */
-    width: min(70%, 700px);
 }
 
 .projects-container h2{
@@ -291,14 +325,6 @@ hr{
     margin-bottom:2rem;
 }
 
-.contact-container{
-    display:flex;
-    flex-direction:column;
-    /* width:70%;
-    max-width:700px; */
-    width: min(70%, 700px);
-}
-
 .contact-container p:first-of-type{
     color:var(--text-clr);
 }
@@ -313,11 +339,25 @@ hr{
     color: var(--text-clr);
 }
 
+/*Selling*/
+.selling-main{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container p:first-of-type{
+    margin-top: 0;
+}
+
 /*Footer*/
 
 footer{
     background-color: var(--secondary-bg);
-    position: relative;
+    /* position: absolute; */
+    width:100%;
+    padding:10px 0px;
+    text-align: right;
 }
 .social-nav{
     padding:50px;
@@ -336,21 +376,25 @@ footer{
     transition:0.2s;
 }
 
+.fa-linkedin:hover, .fa-envelope:hover {
+    color:#ccc;
+}
+
 
 footer .reference{
     color:rgb(160, 160, 160);
     font-family: var(--font-secondary);
     font-size: 0.85rem;
-    position: absolute;
-    right:10px;
-    bottom:10px;
+    /* position: absolute; */
+    /* right:10px;
+    bottom:10px; */
     text-decoration: none;
     transition:0.5s;
+    margin-right:15px;
 }
 
 footer .reference:hover{
     color:white;
-    transform:scale(1.1,1.1)translateX(-10px);
 }
 
 /* footer .reference:visited{
