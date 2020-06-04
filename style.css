@@ -85,7 +85,6 @@ nav a {
     display:inline-block;
     font-family: var(--font-primary);
     font-size:1.2rem;
-    transition:0.4s;
 }
 
 nav a:hover{
@@ -499,6 +498,16 @@ footer .reference:hover{
         transform:scale(1,0);
         transform-origin:top;
         transition: transform 400ms ease-in-out;
+    }
+
+    nav a{
+        opacity:0;
+        transition:opacity 150ms ease-in-out;
+    }
+
+    .nav-toggle:checked ~ nav a{
+        opacity:1;
+        transition:opacity 250ms ease-in-out 250ms;
     }
 
     nav ul{
