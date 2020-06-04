@@ -9,23 +9,29 @@
     </head>
 
     <body>
-        <div class="wrapper">
-            <header>
-                <img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo">
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="buying.html">Buying</a>
-                    <a href="selling.html">Selling</a>
-                    <a href ="projects.html">Projects</a>
-                    <a href="#">Contact</a>
-                </nav>
-            </header>
+        <header>
+            <img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo">
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="buying.html">Buying</a></li>
+                    <li><a href="selling.html">Selling</a></li>
+                    <li><a href ="projects.html">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>     
+            </nav>
+            <label for="nav-toggle" class="nav-toggle-label">
+                <span></span>
+            </label>
+        </header>
+        <!-- <div class="spacer">
+            &nbsp;
+        </div> -->
 
-            <section class="selling-section">
+            <section class="welcome-section">
                 <img class="title-image" src="images/selling-overlay.jpg" alt="A tiled white stone background">
-                <div class="cover">
-                    <h2 class="selling-overlay">Land Disposal</h2>
-                </div>
+                <h2 class="selling-overlay">Land Disposal</h2>
             </section>
 
             <section class="selling-main">
@@ -34,8 +40,6 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla ut repudiandae eaque numquam illo eius nesciunt odio molestias voluptate maiores.</p>
                 </div>
             </section>
-
-        </div>
 
         <footer>
             <!-- <div class="social-nav">

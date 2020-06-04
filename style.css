@@ -36,13 +36,6 @@ body{
     min-height: 100vh;
 }
 
-.wrapper{
-    display:flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-
 .opening-statement p{
     width: min(70%, 700px);
 } 
@@ -58,6 +51,9 @@ body{
 header{
     background: var(--primary-bg);
     text-align: center;
+    position:relative;
+    z-index:99;
+    width:100%;
 }
 
 header > img {
@@ -67,7 +63,19 @@ header > img {
 
 nav{
     background-color: var(--secondary-bg);
-    display:block;
+    /* display:flex;
+    align-items: center;
+    justify-content: center; */
+
+}
+
+nav ul {
+    list-style: none;
+    margin:0;
+    padding:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav a {
@@ -83,6 +91,19 @@ nav a {
 nav a:hover{
     background-color:white;
     color:var(--secondary-bg);
+}
+
+.nav-toggle-label{
+    display:none;
+}
+
+.nav-toggle{
+    display:none;
+}
+
+.spacer{
+    width:100%;
+    height:217.5px;
 }
 
 /*Intro image and text banner*/
@@ -110,7 +131,7 @@ nav a:hover{
 
 }
 
-.text-overlay{
+.text-overlay, .selling-overlay{
     background-color:rgba(0,0,0,0.3) ;
     color:white;
     position: absolute;
@@ -122,28 +143,18 @@ nav a:hover{
     font-size: 1.7rem;
     margin:auto;
     text-align: center;
-    /* white-space: nowrap; */
     line-height: 150%;
     opacity:0;
     transition:0.5s;
+    border: white 2px solid;
     animation: fade-in 2s ease-in-out 0.5s 1 ;
     animation-fill-mode: forwards;
 }
 
 .selling-overlay{
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    padding:15px 0px;
-    font-family: var(--font-primary);
     font-size: 2.5rem;
-    margin:auto;
-    text-align: center;
-    color:white;
-    background-color: rgba(0,0,0,0.3);
-    border: white 2px solid;
-    width:30%;
+    animation-name: none;
+    opacity:1;
 }
 
 
@@ -322,7 +333,10 @@ hr{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-bottom:2rem;
+}
+
+.last-section{
+    padding-bottom:4rem;
 }
 
 .contact-container p:first-of-type{
@@ -354,7 +368,8 @@ hr{
 
 footer{
     background-color: var(--secondary-bg);
-    /* position: absolute; */
+    position: absolute;
+    bottom:0;
     width:100%;
     padding:10px 0px;
     text-align: right;
@@ -452,11 +467,7 @@ footer .reference:hover{
     }
 
     .buying, .selling{
-        margin:1.5rem 1.5rem;
-    }
-
-    .selling{
-        margin-bottom: 3rem;
+        height:200px;
     }
 
     .opening-statement p {
@@ -467,3 +478,72 @@ footer .reference:hover{
         font-size: 0.7rem;
     }
 }
+
+
+@media screen and (max-width: 600px){
+    .spacer{
+        height:130px;
+    }
+    .nav-toggle:checked ~ nav{
+        transform:scale(1,1);
+    }
+
+    nav{
+        all:unset;
+        background-color: var(--secondary-bg);
+        position:absolute;
+        text-align: left;
+        top:100%;
+        left:0;
+        width:100%;
+        transform:scale(1,0);
+        transform-origin:top;
+        transition: transform 400ms ease-in-out;
+    }
+
+    nav ul{
+        flex-direction:column;
+        align-items: flex-start;
+        margin-left:1em;
+    }
+
+    .nav-toggle-label{
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        margin-left:1em; /*To line up with nav items*/
+        height:100%;
+        display:flex;
+        align-items: center;    
+    }
+    
+    .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
+        display:block;
+        background:white;
+        height:2px;
+        width:2em;
+        border-radius:2px;
+        position:relative;
+    }
+    
+    .nav-toggle-label span::before, .nav-toggle-label span::after{
+        content:'';
+        position:absolute;
+    }
+    
+    .nav-toggle-label span::before{
+        bottom:7px;
+    }
+    
+    .nav-toggle-label span::after{
+        top:7px;
+    }
+
+    label {
+        cursor:pointer;
+        margin:0;
+    }
+}
+
+
