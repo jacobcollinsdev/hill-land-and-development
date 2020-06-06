@@ -142,7 +142,6 @@ nav a:hover{
     padding:15px;
     font-family: var(--font-primary);
     font-size: 1.7rem;
-    margin:auto;
     text-align: center;
     line-height: 150%;
     opacity:0;
@@ -150,6 +149,7 @@ nav a:hover{
     border: white 2px solid;
     animation: fade-in 2s ease-in-out 0.5s 1 ;
     animation-fill-mode: forwards;
+    width:80%;
 }
 
 .selling-overlay{
