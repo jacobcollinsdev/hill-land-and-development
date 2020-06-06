@@ -261,7 +261,7 @@ hr{
 }
 
 .fa-check{
-    color:#35F554;
+    color:rgb(34, 185, 34);
     padding-right:10px;
 }
 
@@ -365,6 +365,10 @@ hr{
 
 ul {
     margin-top:0;
+}
+
+li{
+    list-style: none;
 }
 
 /*Footer*/
