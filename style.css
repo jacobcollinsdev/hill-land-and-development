@@ -2,7 +2,7 @@
 
 :root{
     --primary-bg: #180E47;
-    --secondary-bg:#100A30;
+    --secondary-bg:rgb(16, 10, 48);
     --font-primary: 'Libre Baskerville', 'Times New Roman';
     --font-secondary: 'Roboto', Arial;
     --text-clr:#525252;
@@ -218,9 +218,9 @@ hr{
     width:300px;
     height:250px;
     margin:24px 24px 50px;
-    background-color: rgb(238, 237, 237);
+    background-color: white;
     font-family:var(--font-primary);
-    border: 2px solid transparent;
+    border: 2px solid var(--secondary-bg);
     transition:0.5s;
 }
 
@@ -229,9 +229,12 @@ hr{
     margin:0;
 }
 
+.buying:hover h2,.buying:hover p, .selling:hover h2, .selling:hover p{
+    color:white;
+}
+
 .buying:hover, .selling:hover{
-    background-color: white;
-    border: 2px solid var(--secondary-bg);
+    background-color: rgba(16, 10, 48,1);
 }
 
 
