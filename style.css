@@ -36,6 +36,10 @@ body{
     min-height: 100vh;
 }
 
+a {
+    text-decoration:none;
+}
+
 .opening-statement p{
     width: min(70%, 700px);
 } 
@@ -79,7 +83,6 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
     padding:10px;
     color:white;
     display:inline-block;
