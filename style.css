@@ -469,7 +469,7 @@ footer .reference:hover{
         font-size:2rem;
     }
     
-    p{
+    p, li{
         font-size:1.2rem;
     }
 
@@ -570,7 +570,8 @@ footer .reference:hover{
         margin-right :1rem;
     }
 
-    .description h3{
+    .description h3, .description h4{
+        text-align: left;
         margin-top:0;
     }
 
