@@ -12,24 +12,27 @@
     <body>
 
         <header>
-            <img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo">
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="buying.html">Buying</a></li>
-                    <li><a href="selling.html">Selling</a></li>
-                    <li><a href ="projects.html">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>     
-            </nav>
-            <label for="nav-toggle" class="nav-toggle-label">
-                <span></span>
-            </label>
+            <div class="container projects-nav">
+                <div class="logo-container">
+                    <a href="index.html"><img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo"></a>
+                </div>
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                <nav>
+                    <ul>
+                        <li><a class="project-nav-link" href="index.html">Home</a></li>
+                        <li><a class="project-nav-link" href="buying.html">Buying</a></li>
+                        <li><a class="project-nav-link" href="selling.html">Selling</a></li>
+                        <li><a class="project-nav-link" href ="projects.html">Projects</a></li>
+                        <li><a class="project-nav-link" href="#">Contact</a></li>
+                    </ul>     
+                </nav>
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                </label>
+            </div>
+
         </header>
-        <!-- <div class="spacer">
-            &nbsp;
-        </div> -->
+
 
         <section class="projects">
             <div class="projects-container last-section">
@@ -64,10 +67,11 @@
 
         <footer>
             <!-- <div class="social-nav">
-                <a href="https://www.linkedin.com/in/peter-hill-57951932/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/peter-hill-57951932/" target="_blank"></i></a>
                 <a href="mailto:hill_land63@yahoo.co.uk"><i class="fas fa-envelope"></i></a>
             </div> -->
-            <a class="reference" href="https://www.jacobcollinsdev.com" target="_blank">Website designed by jacobcollinsdev &copy; 2020</a>
+            <p class="footer-text">Hill Land and Developments &copy; 2020</p>
+            <a class="reference" href="https://www.jacobcollinsdev.com" target="_blank">Website designed by jacobcollinsdev</a>
         </footer>
 
 

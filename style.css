@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Roboto:wght@400;900&display=swap');
 
+*,*::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    position:relative;
+    min-height:100vh;
+}
+
 :root{
     --primary-bg: #180E47;
     --secondary-bg:rgb(16, 10, 48);
@@ -8,160 +24,182 @@
     --text-clr:#525252;
 }
 
-/*Typography*/
 p, li, h4{
     color:var(--text-clr);
     font-family:var(--font-secondary);
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 150%;
 }
 
-h2, h3{
+h1, h2, h3, nav a{
     font-family:var(--font-primary);
 }
 
+h1{
+    font-size:2rem;
+}
+
 h2{
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 h3{
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
 
-body{
-    padding:0;
-    margin:0;
-    box-sizing: border-box;
-    position:relative;
-    min-height: 100vh;
-}
-
-a {
-    text-decoration:none;
-}
-
-.opening-statement p{
-    width: min(70%, 700px);
-} 
-
-.why-us-container, .projects-container, .contact-container, .main-container{
-    width: min(70%, 700px);
-    display:flex;
-    flex-direction:column;
-}
-
-/*Logo banner & nav bar*/
-
-header{
-    background: var(--primary-bg);
-    text-align: center;
-    position:relative;
-    z-index:99;
+.homepage-bg{
+    background-image: url(images/header-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width:100%;
+    height:100vh;
+    position:relative;
 }
 
-header > img {
-    height:130px;
-    padding:20px;
+.container{
+    width: 100%;
+    height:calc(2em + 100px);
 }
 
-nav{
-    background-color: var(--secondary-bg);
-    /* display:flex;
-    align-items: center;
-    justify-content: center; */
-
+.projects-nav{
+    background:var(--secondary-bg);
 }
 
-nav ul {
-    list-style: none;
-    margin:0;
-    padding:0;
+.project-nav-link:hover{
+    color:gold;
+}
+
+.logo-container{
     display:flex;
-    align-items: center;
+    width:100%;
     justify-content: center;
 }
 
+.logo-banner{
+    height:100px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+nav{
+    position:absolute;
+    text-align:left;
+    top:calc(2em + 100px);
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.5);
+    transform:scale(1,0);
+    transform-origin:top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav li:first-of-type{
+    margin-top: 1em;
+}
+
 nav a {
-    padding:10px;
     color:white;
-    display:inline-block;
-    font-family: var(--font-primary);
-    font-size:1.2rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity:0;
+    transition: opacity 150ms ease-in-out;
 }
 
 nav a:hover{
-    background-color:white;
     color:var(--secondary-bg);
-}
-
-.nav-toggle-label{
-    display:none;
 }
 
 .nav-toggle{
     display:none;
 }
 
-.spacer{
-    width:100%;
-    height:217.5px;
+.nav-toggle-label{
+    position:absolute;
+    top:0;
+    left:0;
+    margin-left:1em;
+    height: calc(2em + 100px);
+    display:flex;
+    align-items: center;
 }
 
-/*Intro image and text banner*/
-.welcome-section{
-    position:relative; 
+.nav-toggle-label span, .nav-toggle-label span::before ,.nav-toggle-label span::after{
+    display:block;
+    height:3px;
+    width:2.5em;
+    position:relative;
+    border-radius:2px;
+    background: white;
 }
 
-/* .selling-section{
-    background-image: url(images/selling-overlay.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height:500px;
+.nav-toggle-label span::before, .nav-toggle-label span::after{
+    content:'';
+    position:absolute;
 }
 
-.cover{
-    width:100%;
-    height:100%;
-    background-color: rgba(0,0,0,0.3);
-} */
-
-.title-image{
-    width:100%;
-    height:70vh;
-    object-fit: cover;
+.nav-toggle-label span::before{
+    bottom:7px;
 }
 
-.text-overlay, .selling-overlay{
-    background-color:rgba(0,0,0,0.3) ;
+.nav-toggle-label span::after{
+    top:7px;
+}
+
+label{
+    cursor: pointer;
+}
+
+.nav-toggle:checked ~ nav{
+    transform:scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity:1;
+}
+
+.fa-arrow-alt-circle-down{
     color:white;
+    position:absolute;
+    top:93%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:2rem;
+    transition:0.5s;
+}
+
+.fa-arrow-alt-circle-down:hover{
+    font-size:3rem;
+    cursor: pointer;
+}
+
+.welcome-statement{
+    margin:0;
     position: absolute;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
-    padding:15px;
-    font-family: var(--font-primary);
-    font-size: 1.7rem;
+    color:white;
     text-align: center;
-    line-height: 150%;
     opacity:0;
-    transition:0.5s;
-    border: white 2px solid;
-    animation: fade-in 2s ease-in-out 0.5s 1 ;
+    animation: fade-in 2s ease-in-out 0.5s 1;
     animation-fill-mode: forwards;
-    white-space: nowrap;
+    font-style: italic;
+    line-height: 150%;
+    width:80%;
+    display:none;
 }
-
-.text-overlay h2{
-    margin:0;
-}
-
-.selling-overlay{
-    font-size: 2.5rem;
-    animation-name: none;
-    opacity:1;
-}
-
 
 @keyframes fade-in{
     0%{
@@ -172,21 +210,10 @@ nav a:hover{
     }
 }
 
-/*Opening Statement*/
-.opening-statement{
+.why-us-container, .projects-container, .contact-container, .main-container{
+    width: min(70%, 700px);
     display:flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.opening-statement p{
-    /* width:70%;
-    max-width:700px; */
-    text-align: center;
-    font-size:1.5rem;
-    font-style: italic;
-    font-family: var(--font-primary);
-    color:#979797;
+    flex-direction:column;
 }
 
 hr{
@@ -194,10 +221,11 @@ hr{
     border-radius:50%;
     color:rgb(255, 217, 0);
 }
-/*Buying/Selling section*/
 
+/*Buying & Selling */
 .buying-selling{
     display:flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -209,6 +237,7 @@ hr{
 }
 
 .buying-selling h2{
+    margin-top:1rem;
     margin-bottom:0;
     text-align: center;
 }
@@ -219,12 +248,20 @@ hr{
     align-items: center;
     justify-content: center;
     width:300px;
-    height:250px;
-    margin:24px 24px 50px;
+    /* height:250px; */
+    margin:24px;
     background-color: white;
     font-family:var(--font-primary);
     border: 2px solid var(--secondary-bg);
     transition:0.5s;
+}
+
+.buying{
+    margin-top:50px;
+}
+
+.selling{
+    margin-bottom:50px;
 }
 
 .buying p, .selling p{
@@ -240,8 +277,12 @@ hr{
     background-color: rgba(16, 10, 48,1);
 }
 
+.selling-main{
+    display:flex;
+    justify-content: center;
+}
 
-/* Why Us Section */
+/* Why Us */
 .why-us{
     background-color: var(--secondary-bg);
     color:white;
@@ -252,7 +293,7 @@ hr{
 }
 
 .why-us-container p:first-of-type{
-    margin-top: 0;
+    margin-top: 1rem;
 }
 
 .why-us-container h2{
@@ -264,9 +305,18 @@ hr{
     padding-bottom:2rem;
 }
 
-.list p{
-    color:rgb(223, 223, 223);
+.main-container li{
+    color:var(--text-clr);
+}
+
+li{
     line-height: 2rem;
+    color:rgb(223, 223, 223);
+    padding-bottom:1rem;
+}
+
+ul{
+    list-style-image: url(images/check.png);
 }
 
 .fa-check{
@@ -274,7 +324,7 @@ hr{
     padding-right:10px;
 }
 
-/*Projects*/
+/* Projects */
 
 .projects{
     display:flex;
@@ -288,11 +338,12 @@ hr{
 
 .project{
     display:flex;
+    flex-direction:column;
     margin:2rem auto;
 }
 
 .project img {
-    width:50%;
+    width:100%;
     object-fit: cover;
 }
 
@@ -300,18 +351,18 @@ hr{
     display:flex;
     flex-direction: column;
     justify-content: flex-start;
-    width:50%;
-    margin-left:1rem;
-    margin-right :1rem;
+    width:100%;
 }
 
 .description h3{
-    margin-top: 0;
+    margin-top: 1em;
     margin-bottom:0;
+    text-align: center;
 }
 .description h4{
     margin:0;
     padding:0;
+    text-align: center;
 }
 
 .see-more{
@@ -333,11 +384,14 @@ hr{
     background-color: white;
     color:var(--secondary-bg);
     border:2px solid var(--secondary-bg);
+} 
+
+a {
+    text-decoration: none;
 }
+ /* Contact Us */
 
-/*Contact*/
-
-.contact{
+ .contact{
     display:flex;
     align-items: center;
     justify-content: center;
@@ -345,6 +399,10 @@ hr{
 
 .last-section{
     padding-bottom:4rem;
+}
+
+.contact-container h2{
+    margin-top:0;
 }
 
 .contact-container p:first-of-type{
@@ -356,226 +414,173 @@ hr{
     line-height: 150%;
 }
 
-.fa-phone, .fa-envelope, .fa-building{
+.fa-phone, .fa-envelope, .fa-linkedin{
     padding-right:10px;
     color: var(--text-clr);
+    font-size:1.5rem;
 }
 
-/*Selling*/
-.selling-main{
-    display:flex;
-    align-items: center;
-    justify-content: center;
+.fab{
+    width:34px;
+    height:24px;
 }
 
-.main-container p{
-    margin-top: 0;
-}
 
-ul {
-    margin-top:0;
-}
-
-li{
-    list-style: none;
-}
-
-/*Footer*/
+/* Footer */
 
 footer{
     background-color: var(--secondary-bg);
     position: absolute;
     bottom:0;
     width:100%;
-    padding:10px 0px;
-    text-align: right;
-}
-.social-nav{
-    padding:50px;
+    text-align: center;
     display:flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction:column;
 }
 
-
-.social-nav .fa-linkedin, .social-nav .fa-envelope{
-    color:white;
-    font-size: 3rem;
-    margin-left: 10px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition:0.2s;
-}
-
-.fa-linkedin:hover, .fa-envelope:hover {
-    color:#ccc;
-}
-
-
-footer .reference{
+footer .reference, .footer-text{
     color:rgb(160, 160, 160);
     font-family: var(--font-secondary);
-    font-size: 0.85rem;
-    /* position: absolute; */
-    /* right:10px;
-    bottom:10px; */
+    font-size: 0.75rem;
     text-decoration: none;
     transition:0.5s;
-    margin-right:15px;
+    margin-bottom:0.75rem;
+}
+
+.footer-text{
+    margin-bottom:0;
+    font-size:0.9rem;
 }
 
 footer .reference:hover{
     color:white;
 }
 
-/* footer .reference:visited{
-    color:rgb(160, 160, 160);
-} */
-
-@media screen and (max-width:1000px){
-    .text-overlay{
-        white-space:normal;
-    }
-}
-
-@media screen and (max-width: 800px){
-    .project{
-        flex-direction: column;
-    }
-
-    .project img, .description{
-        width:100%;
-    }
-
-    .project img{
-        margin-bottom: 1.5rem;
-    }
-
-    .description h3, .description h4{
-        text-align: center;
-    }
-
-    .description{
-        margin-left:0;
-        margin-right :0;
-    }
-}
-
-@media screen and (max-width: 700px){
-    header > img{
-        height: 100px;
-    }
-
-    nav a{
-        font-size: 1rem;
-    }
-
-    .title-image{
-        height:300px;
-    }
-
-    .text-overlay{
-        font-size: 1.2rem;
+@media screen and (min-width:800px){
+    h1{
+        font-size:3rem;
     }
 
     h2{
-        font-size: 1.7rem;
-    }
-    p{
-        font-size: 1rem;
-    }
-    .buying-selling{
-        flex-direction: column;
-    }
-
-    .buying, .selling{
-        height:200px;
-    }
-
-    .opening-statement p {
-        font-size: 1.1rem;
-    }
-
-    footer .reference{
-        font-size: 0.7rem;
-    }
-}
-
-
-@media screen and (max-width: 600px){
-    .spacer{
-        height:130px;
-    }
-    .nav-toggle:checked ~ nav{
-        transform:scale(1,1);
-    }
-
-    nav{
-        all:unset;
-        background-color: var(--secondary-bg);
-        position:absolute;
-        text-align: left;
-        top:100%;
-        left:0;
-        width:100%;
-        transform:scale(1,0);
-        transform-origin:top;
-        transition: transform 400ms ease-in-out;
-    }
-
-    nav a{
-        opacity:0;
-        transition:opacity 150ms ease-in-out;
-    }
-
-    .nav-toggle:checked ~ nav a{
-        opacity:1;
-        transition:opacity 250ms ease-in-out 250ms;
-    }
-
-    nav ul{
-        flex-direction:column;
-        align-items: flex-start;
-        margin-left:1em;
-    }
-
-    .nav-toggle-label{
-        display:block;
-        position:absolute;
-        top:0;
-        left:0;
-        margin-left:1em; /*To line up with nav items*/
-        height:100%;
-        display:flex;
-        align-items: center;    
+        font-size:2rem;
     }
     
-    .nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after{
-        display:block;
-        background:white;
-        height:2px;
-        width:2em;
-        border-radius:2px;
+    p{
+        font-size:1.2rem;
+    }
+
+    .projects-nav{
+        background-color: rgba(0,0,0,0);
+    }
+
+    .buying-bg{
+        background-image: url(images/buying-overlay.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 40%;
+        width:100%;
+        height:50vh;
         position:relative;
     }
     
-    .nav-toggle-label span::before, .nav-toggle-label span::after{
-        content:'';
-        position:absolute;
-    }
-    
-    .nav-toggle-label span::before{
-        bottom:7px;
-    }
-    
-    .nav-toggle-label span::after{
-        top:7px;
+    .selling-bg{
+        background-image: url(images/selling-overlay.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width:100%;
+        height:50vh;
+        position:relative;
     }
 
-    label {
-        cursor:pointer;
+    .welcome-statement{
+        display:block;
+    }
+
+    header{
+        display:flex;
+    }
+    
+    .nav-toggle-label{
+        display:none;
+    }
+
+    nav{
+        all: unset;
+        display:flex;
+        justify-self: flex-end;
+        align-items:center;
+        margin-right:1em;
+    }
+
+    nav a {
+        opacity:1;
+    }
+
+    nav ul {
+        display:flex;
+    }
+
+    nav li:first-of-type{
+        margin-top: 0;
+    }
+
+    nav li{
+        padding:0;
+        margin-bottom:0;
+    }
+
+    .container{
+        display:grid;
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .logo-container{
+        margin-left:1em;
+        justify-self: flex-start;
+    }
+
+    .buying-selling{
+        flex-direction: row;
+    }
+
+    .buying, .selling{
+        margin:50px 24px;
+    }
+
+    .buying p, .selling p{
+        text-align:center;
+    }
+
+    .project{
+        flex-direction: row;
+    }
+
+    .project img{
+        width:50%;
+    }
+
+    .description{
+        justify-content: flex-start;
+        width:50%;
+        margin-left:1rem;
+        margin-right :1rem;
+    }
+
+    .description h3{
+        margin-top:0;
+    }
+
+    footer{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    footer .reference, .footer-text{
         margin:0;
+        padding:10px;
+        font-size: 0.9rem;
     }
+
+
 }
-
-
