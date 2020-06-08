@@ -61,7 +61,7 @@ h3{
     height:calc(2em + 100px);
 }
 
-.projects-nav{
+.projects-nav, .main-nav {
     background:var(--secondary-bg);
 }
 
@@ -87,10 +87,11 @@ nav{
     top:calc(2em + 100px);
     left:0;
     width:100%;
-    background:rgba(0,0,0,0.5);
+    background:var(--secondary-bg);
     transform:scale(1,0);
     transform-origin:top;
     transition: transform 400ms ease-in-out;
+    z-index:10;
 }
 
 nav ul {
@@ -184,7 +185,7 @@ label{
     cursor: pointer;
 }
 
-.welcome-statement{
+.welcome-statement, .opening-statement{
     margin:0;
     position: absolute;
     top:50%;
@@ -198,6 +199,9 @@ label{
     font-style: italic;
     line-height: 150%;
     width:80%;
+}
+
+.opening-statement{
     display:none;
 }
 
@@ -469,7 +473,7 @@ footer .reference:hover{
         font-size:1.2rem;
     }
 
-    .projects-nav{
+    .main-nav{
         background-color: rgba(0,0,0,0);
     }
 
@@ -492,7 +496,7 @@ footer .reference:hover{
         position:relative;
     }
 
-    .welcome-statement{
+    .opening-statement{
         display:block;
     }
 
