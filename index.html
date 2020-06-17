@@ -16,26 +16,29 @@
                 <div class="logo-container">
                     <a href="/"><img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo"></a>
                 </div>
-                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+                <button class="nav-toggle-button">
+                    <span class="hamburger"></span>
+                </button>
+
                 <nav>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="buying.html">Buying</a></li>
-                        <li><a href="selling.html">Selling</a></li>
-                        <li><a href ="projects.html">Projects</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/" class="nav-link">Home</a></li>
+                        <li><a href="buying.html" class="nav-link">Land Acquisition</a></li>
+                        <li><a href="selling.html" class="nav-link">Land Disposal</a></li>
+                        <li><a href ="projects.html" class="nav-link">Projects</a></li>
+                        <li><a href="#" class="nav-link">Contact</a></li>
                     </ul>     
                 </nav>
-                <label for="nav-toggle" class="nav-toggle-label">
-                    <span></span>
-                </label>
+
+
             </div>
 
             <h2 class="welcome-statement">
                 Hill Land and Developments are your local land development agency with over 20 years of experience acquiring and disposing of land in and around London and Surrey.
             </h2>
 
-            <i class="far fa-arrow-alt-circle-down"></i>
+            <i class="fas fa-chevron-down"></i>
 
         </header>
 
@@ -110,23 +113,41 @@
         <section class="contact last-section">
             <div class="contact-container">
                 <h2>Contact Us</h2>
-                <p>If you're interested in finding out how much your property is worth, or are looking for land acquisition opportunities, get in touch directly with our managing director today.</p>
-                <p><i class="fas fa-phone"></i>07946650375 / 017327217360</p>
-                <p><i class="fas fa-envelope"></i>hill_land63@yahoo.co.uk</p>
-                <p><i class="fab fa-linkedin"></i>Peter Hill</p>
+                <p>If you're interested in finding out how much your property is worth, or are looking for land acquisition opportunities, get in touch directly with us today.</p>
+
+                <div class="contact-form">
+                    <form action="">
+
+                        <div class="input-fields">
+                            <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
+    
+                            <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
+    
+                            <input type="email" name="email" placeholder="Email" id="email" required>
+                        
+                            <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
+                            
+                            <textarea name="message" id="message" rows="5" placeholder="Type your message here..."></textarea>
+                        </div>
+
+
+                        <input type="submit" value="Send" class="btn">
+
+                        
+
+                    </form>
+                </div>
             </div>
         </section>
 
         <footer>
-            <!-- <div class="social-nav">
-                <a href="https://www.linkedin.com/in/peter-hill-57951932/" target="_blank"></i></a>
-                <a href="mailto:hill_land63@yahoo.co.uk"><i class="fas fa-envelope"></i></a>
-            </div> -->
             <p class="footer-text">Hill Land and Developments &copy; 2020</p>
             <a class="reference" href="https://www.jacobcollinsdev.com" target="_blank">Website designed by jacobcollinsdev</a>
         </footer>
 
 
+        <script src="scripts/jquery-3.5.1.min.js"></script>
+        <script src="scripts/script.js"></script>
 
     </body>
 
