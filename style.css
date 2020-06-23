@@ -38,6 +38,7 @@ h1, h2, h3, nav a{
 
 h1{
     font-size:2rem;
+    text-align: center;
 }
 
 h2{
@@ -190,11 +191,13 @@ nav li:first-of-type{
     opacity:0;
 }
 
-.fa-chevron-down{
+.scroll-down{
     color:white;
     position:absolute;
     top:93%;
     left:50%;
+    background-color: rgba(0,0,0,0);
+    border:none;
     transform:translate(-50%,-50%);
     font-size:2rem;
     transition:0.5s;
@@ -308,6 +311,10 @@ hr{
 
 /* Why Us */
 .why-us{
+    background-image: url(/images/buying-overlay.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-color: var(--secondary-bg);
     color:white;
     display:flex;
@@ -524,7 +531,7 @@ footer .reference:hover{
 
 @media screen and (min-width:800px){
     h1{
-        text-align: center;
+        font-size: 3rem;
     }
 
     h2{
