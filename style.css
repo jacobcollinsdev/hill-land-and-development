@@ -311,10 +311,10 @@ hr{
 
 /* Why Us */
 .why-us{
-    background-image: url(/images/buying-overlay.png);
+    /* background-image: url(/images/buying-overlay.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     background-color: var(--secondary-bg);
     color:white;
     display:flex;
