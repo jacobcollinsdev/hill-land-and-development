@@ -23,6 +23,7 @@ body{
     position:relative;
     min-height:100vh;
     font-family: var(--font-secondary);
+    overflow-x: hidden;
 }
 
 p, li, h4{
@@ -52,7 +53,7 @@ h3{
 .homepage-bg{
     background-image: url(images/header-image.png);
     width:100%;
-    height:100vh;
+    height:95vh;
     background-repeat: no-repeat;
     background-size: cover;
     position:relative;
@@ -216,9 +217,9 @@ nav li:first-of-type{
     transform:translate(-50%,-50%);
     color:white;
     text-align: center;
-    opacity:0;
-    animation: fade-in 2s ease-in-out 0.5s 1;
-    animation-fill-mode: forwards;
+    /* opacity:0;
+    animation: fade-in 1s ease-in-out 1s 1;
+    animation-fill-mode: forwards; */
     font-style: italic;
     line-height: 150%;
     width:80%;
@@ -239,7 +240,7 @@ nav li:first-of-type{
 }
 
 .why-us-container, .projects-container, .contact-container, .main-container{
-    width: min(70%, 800px);
+    width: min(80%, 900px);
     display:flex;
     flex-direction:column;
 }
@@ -272,31 +273,22 @@ hr{
     text-align: center;
 }
 
+.grid{
+    display:block;
+    width: min(80%, 900px);
+}
+
 .buying, .selling{
     display:flex;
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    width:300px;
-    /* height:250px; */
-    margin:24px;
+    margin:1.5em;
     background-color: white;
     font-family:var(--font-primary);
     border: 2px solid var(--secondary-bg);
-    transition:0.5s;
-}
-
-.buying{
-    margin-top:50px;
-}
-
-.selling{
-    margin-bottom:50px;
-}
-
-.buying p, .selling p{
-    padding:20px;
-    margin:0;
+    padding:1em;
+    text-align: center;
 }
 
 .buying:hover h2,.buying:hover p, .selling:hover h2, .selling:hover p{
@@ -314,20 +306,17 @@ hr{
 
 /* Why Us */
 .why-us{
-    /* background-image: url(/images/buying-overlay.png);
+    /* background-image: url(/images/image850.png);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
+    background-position: 50% 50%;
+    background-attachment: fixed; */
     background-color: var(--secondary-bg);
     color:white;
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.why-us-container p:first-of-type{
-    margin-top: 1rem;
 }
 
 .why-us-container h2{
@@ -376,8 +365,10 @@ ul{
     margin:2rem auto;
 }
 
+
 .project img {
     width:100%;
+    height:100%;
     object-fit: cover;
 }
 
@@ -551,6 +542,11 @@ footer .reference:hover{
 
     .buying-selling{
         flex-direction: row;
+    }
+
+    .grid{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
     }
 
     .buying, .selling{
