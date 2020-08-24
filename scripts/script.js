@@ -28,11 +28,13 @@ gsap.from(".welcome-statement",{
     scaleY:1.2
 })
 
-gsap.from(".nav-link",{
-    opacity:0,
-    duration:0.5,
-    stagger:0.2
-})
+if(window.innerWidth > 900){
+    gsap.from(".nav-link",{
+        opacity:0,
+        duration:0.5,
+        stagger:0.2
+    })
+}
 
 let tl = gsap.timeline({
     scrollTrigger:{
@@ -70,11 +72,10 @@ tl2.from(".anim1",{
 
 let tl3 = gsap.timeline({
     scrollTrigger:{
-        trigger:".projects",
-        start:"center-=100 bottom",
+        trigger:".project-trigger-1",
+        start:"center bottom",
         toggleActions: "play none none reverse",
         ease:"power2.easeOut"
-
     }
 })
 
@@ -83,6 +84,26 @@ tl3.from(".anim2",{
     opacity:0,
     duration:0.5
 }).from(".anim3",{
+    x:200,
+    opacity:0,
+    duration:0.5,
+    stagger:0.2
+}, "-=0.5")
+
+let tl35 = gsap.timeline({
+    scrollTrigger:{
+        trigger:".project-trigger-2",
+        start:"center bottom",
+        toggleActions: "play none none reverse",
+        ease:"power2.easeOut"
+    }
+})
+
+tl35.from(".anim2-1",{
+    x:-200,
+    opacity:0,
+    duration:0.5
+}).from(".anim3-1",{
     x:200,
     opacity:0,
     duration:0.5,

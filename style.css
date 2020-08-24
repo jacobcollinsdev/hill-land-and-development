@@ -57,7 +57,6 @@ h3{
     background-repeat: no-repeat;
     background-size: cover;
     position:relative;
-    background-attachment: fixed;
 }
 
 .container{
@@ -245,6 +244,7 @@ nav li:first-of-type{
     max-width:900px;
     display:flex;
     flex-direction:column;
+    overflow-x: hidden;
 }
 
 hr{
@@ -261,6 +261,8 @@ hr{
     justify-content: center;
     margin-top:3em;
     margin-bottom:3em;
+    overflow-x: hidden;
+
 }
 
 .buying-selling a{
@@ -590,13 +592,15 @@ footer .reference:hover{
         padding:10px;
         font-size: 0.9rem;
     }
-
-
 }
 
 @media screen and (min-width:1000px){
     header{
         display:flex;
+    }
+
+    .homepage-bg{
+        background-attachment: fixed;
     }
     
     .nav-toggle-button{
