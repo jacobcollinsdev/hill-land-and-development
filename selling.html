@@ -54,21 +54,40 @@
                         data-netlify="true"
                         >
     
-                            <div class="input-fields">
+                        <div class="input-fields">
+                            <input type="hidden" name="subject" value="Website Enquiry from Homepage Contact Form">
+
+                            <div class="anim4">
+                                <label for="firstName">First Name:</label>
                                 <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
-        
-                                <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
-        
-                                <input type="email" name="email" placeholder="Email" id="email" required>
-                            
-                                <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
-                                
-                                <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                             </div>
     
-                            <div data-netlify-recaptcha="true" class="recaptcha"></div>
+                            <div class="anim5">                                
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
+                            </div>
+    
+                            <div class="anim4">
+                                <label for="email" >Email:</label>
+                                <input type="email" name="email" placeholder="Email" id="email" required>
+                            </div>
+                        
+                            <div class="anim5">
+                                <label for="phone">Telephone (Optional):</label>
+                                <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
+                            </div>
+                            
+                            
+                        </div>
 
-                            <input type="submit" value="Send" class="btn">   
+                        <div class="anim4">
+                            <label for="message">Message:</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                        </div>
+
+                        <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div>
+
+                        <input class="anim4 btn" type="submit" value="Send">  
                             
     
                         </form>
