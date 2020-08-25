@@ -13,7 +13,7 @@
 
         <header class="homepage-bg">
             <div class="container">
-                <div class="logo-container">
+                <div class="logo-container nav-fade">
                     <a href="/"><img class="logo-banner" src="images/logo-banner.png" alt="Hill Land and Development Logo"></a>
                 </div>
 
@@ -23,11 +23,11 @@
 
                 <nav>
                     <ul class="anim">
-                        <li><a href="./" class="nav-link">Home</a></li>
-                        <li><a href="buying.html" class="nav-link">Land Acquisition</a></li>
-                        <li><a href="selling.html" class="nav-link">Land Disposal</a></li>
-                        <li><a href ="projects.html" class="nav-link">Projects</a></li>
-                        <li><a href="contact.html" class="nav-link">Contact</a></li>
+                        <li><a href="./" class="nav-link nav-fade">Home</a></li>
+                        <li><a href="buying.html" class="nav-link nav-fade">Land Acquisition</a></li>
+                        <li><a href="selling.html" class="nav-link nav-fade">Land Disposal</a></li>
+                        <li><a href ="projects.html" class="nav-link nav-fade">Projects</a></li>
+                        <li><a href="contact.html" class="nav-link nav-fade">Contact</a></li>
                     </ul>     
                 </nav>
             </div>
@@ -124,24 +124,47 @@
                 <p class="anim4">If you're interested in finding out how much your property is worth, or are looking for land acquisition opportunities, get in touch directly with us today.</p>
 
                 <div class="contact-form">
-                    <form action="">
+                    <form 
+                    name="homepage-contact" 
+                    data-netlify-recaptcha="true" 
+                    method="POST" 
+                    data-netlify="true"
+                    >
 
                         <div class="input-fields">
-                            <input class="anim4" type="text" name="firstName"placeholder="First Name" id="firstName"required>
+                            <input type="hidden" name="subject" value="Website Enquiry from Homepage Contact Form">
+
+                            <div class="anim4">
+                                <label for="firstName">First Name:</label>
+                                <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
+                            </div>
     
-                            <input class="anim5" type="text" name="lastName" placeholder="Last Name" id="lastName" required>
+                            <div class="anim5">                                
+                                <label for="lastName">Last Name:</label>
+                                <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
+                            </div>
     
-                            <input class="anim4" type="email" name="email" placeholder="Email" id="email" required>
+                            <div class="anim4">
+                                <label for="email" >Email:</label>
+                                <input type="email" name="email" placeholder="Email" id="email" required>
+                            </div>
                         
-                            <input class="anim5" type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
+                            <div class="anim5">
+                                <label for="phone">Phone (Optional):</label>
+                                <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
+                            </div>
                             
-                            <textarea class="anim5" name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                            
                         </div>
 
+                        <div class="anim4">
+                            <label for="message">Message:</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
+                        </div>
 
-                        <input class="anim4 btn" type="submit" value="Send" class="btn">
+                        <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div>
 
-                        
+                        <input class="anim4 btn" type="submit" value="Send">                       
 
                     </form>
                 </div>

@@ -47,7 +47,12 @@
                     </ul> -->
 
                     <div class="contact-form">
-                        <form action="">
+                        <form 
+                        name="land-disposal-contact" 
+                        data-netlify-recaptcha="true" 
+                        method="POST" 
+                        data-netlify="true"
+                        >
     
                             <div class="input-fields">
                                 <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
@@ -61,9 +66,9 @@
                                 <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                             </div>
     
-    
-                            <input type="submit" value="Send" class="btn">
-    
+                            <div data-netlify-recaptcha="true" class="recaptcha"></div>
+
+                            <input type="submit" value="Send" class="btn">   
                             
     
                         </form>

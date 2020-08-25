@@ -2,7 +2,6 @@ const navToggle = document.querySelector('.nav-toggle-button');
 const navLinks = document.querySelectorAll('.nav-link');
 const scrollDown = $('.scroll-down');
 
-
 navToggle.addEventListener('click', ()=>{
     document.body.classList.toggle('nav-open');
 })
@@ -16,20 +15,20 @@ navLinks.forEach(link => {
 scrollDown.click(()=>{
     $('html, body').animate({
         scrollTop: $('#buying-selling').offset().top
-    }, 200);
+    }, 500);
 })
 
 //Animations
 
-gsap.from(".welcome-statement",{
-    opacity:0,
-    duration:1,
-    scaleX:1.2,
-    scaleY:1.2
-})
+// gsap.from(".welcome-statement",{
+//     opacity:0,
+//     duration:1,
+//     scaleX:1.2,
+//     scaleY:1.2
+// })
 
 if(window.innerWidth > 900){
-    gsap.from(".nav-link",{
+    gsap.from(".nav-fade",{
         opacity:0,
         duration:0.5,
         stagger:0.2
