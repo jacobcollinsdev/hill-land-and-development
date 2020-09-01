@@ -48,48 +48,49 @@
 
                     <div class="contact-form">
                         <form 
-                        name="land-disposal-contact" 
-                        data-netlify-recaptcha="true" 
+                        name="homepage-contact" 
                         method="POST" 
                         data-netlify="true"
+                        netlify-honeypot="bot-field"
                         >
     
-                        <div class="input-fields">
-                            <input type="hidden" name="subject" value="Website Enquiry from Homepage Contact Form">
-
+                            <div class="input-fields">
+                                <input type="hidden" name="subject" value="Website Enquiry from Homepage Contact Form">
+    
+                                <div class="anim4">
+                                    <label for="firstName">First Name:</label>
+                                    <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
+                                </div>
+        
+                                <div class="anim5">                                
+                                    <label for="lastName">Last Name:</label>
+                                    <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
+                                </div>
+        
+                                <div class="anim4">
+                                    <label for="email" >Email:</label>
+                                    <input type="email" name="email" placeholder="Email" id="email" required>
+                                </div>
+                            
+                                <div class="anim5">
+                                    <label for="phone">Telephone (Optional):</label>
+                                    <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
+                                </div>
+                                
+                                
+                            </div>
+    
                             <div class="anim4">
-                                <label for="firstName">First Name:</label>
-                                <input type="text" name="firstName"placeholder="First Name" id="firstName"required>
+                                <label for="message">Message:</label>
+                                <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                             </div>
     
-                            <div class="anim5">                                
-                                <label for="lastName">Last Name:</label>
-                                <input type="text" name="lastName" placeholder="Last Name" id="lastName" required>
-                            </div>
+                            <input class="hidden" name="bot-field">
     
-                            <div class="anim4">
-                                <label for="email" >Email:</label>
-                                <input type="email" name="email" placeholder="Email" id="email" required>
-                            </div>
-                        
-                            <div class="anim5">
-                                <label for="phone">Telephone (Optional):</label>
-                                <input type="tel" name="phone" placeholder="Telephone (optional)" id="phone">
-                            </div>
-                            
-                            
-                        </div>
-
-                        <div class="anim4">
-                            <label for="message">Message:</label>
-                            <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
-                        </div>
-
-                        <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div>
-
-                        <input class="anim4 btn" type="submit" value="Send">  
-                            
+                            <!-- <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div> -->
     
+                            <!-- <input class="anim4 btn" type="submit" value="Send">                        -->
+                            <button class="anim4 btn">Send</button>
                         </form>
                     </div>
 

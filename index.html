@@ -126,9 +126,9 @@
                 <div class="contact-form">
                     <form 
                     name="homepage-contact" 
-                    data-netlify-recaptcha="true" 
                     method="POST" 
                     data-netlify="true"
+                    netlify-honeypot="bot-field"
                     >
 
                         <div class="input-fields">
@@ -162,10 +162,12 @@
                             <textarea name="message" id="message" rows="5" placeholder="Type your message here..." required></textarea>
                         </div>
 
-                        <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div>
+                        <input class="hidden" name="bot-field">
 
-                        <input class="anim4 btn" type="submit" value="Send">                       
+                        <!-- <div data-netlify-recaptcha="true" class="anim5 recaptcha"></div> -->
 
+                        <!-- <input class="anim4 btn" type="submit" value="Send">                        -->
+                        <button class="anim4 btn">Send</button>
                     </form>
                 </div>
             </div>
