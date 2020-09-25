@@ -235,10 +235,12 @@ nav li:first-of-type{
     from{
         opacity:0;
         transform:translate(-50%, -50%) scale(1.2,1.2);
+        -ms-transform:translate(-50%, -50%) scale(1.2,1.2);
     }
     to{
         opacity:1;
         transform:translate(-50%, -50%) scale(1,1);
+        -ms-transform:translate(-50%, -50%) scale(1,1);
     }
 }
 
@@ -533,7 +535,7 @@ footer .reference:hover{
 
 @media screen and (min-width:800px){
     h1{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     h2{
