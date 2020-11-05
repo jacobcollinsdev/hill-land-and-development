@@ -35,6 +35,7 @@ if(window.innerWidth > 900){
     })
 }
 
+// Buying/Selling Timeline
 let tl = gsap.timeline({
     scrollTrigger:{
         trigger:'.buying-selling',
@@ -54,6 +55,7 @@ tl.from(".buying",{
     duration:1
 }, "-=1")
 
+
 let tl2 = gsap.timeline({
     scrollTrigger:{
         trigger:".why-us",
@@ -69,52 +71,12 @@ tl2.from(".anim1",{
     stagger:0.2
 })
 
-let tl3 = gsap.timeline({
-    scrollTrigger:{
-        trigger:".project-trigger-1",
-        start:"center bottom",
-        toggleActions: "play none none reverse",
-        ease:"power2.easeOut"
-    }
-})
-
-tl3.from(".anim2",{
-    x:-200,
-    opacity:0,
-    duration:0.5
-}).from(".anim3",{
-    x:200,
-    opacity:0,
-    duration:0.5,
-    stagger:0.2
-}, "-=0.5")
-
-let tl35 = gsap.timeline({
-    scrollTrigger:{
-        trigger:".project-trigger-2",
-        start:"center bottom",
-        toggleActions: "play none none reverse",
-        ease:"power2.easeOut"
-    }
-})
-
-tl35.from(".anim2-1",{
-    x:-200,
-    opacity:0,
-    duration:0.5
-}).from(".anim3-1",{
-    x:200,
-    opacity:0,
-    duration:0.5,
-    stagger:0.2
-}, "-=0.5")
-
 tl4 = gsap.timeline({
     scrollTrigger:{
         trigger:".contact",
         start:"center bottom",
         toggleActions: "play none none reverse",
-        ease:"power2.easeOut"
+        ease:"power2"
     }
 })
 
@@ -130,6 +92,32 @@ tl4.from(".anim4",{
     stagger:0.2
 }, "-=0.5")
 
+const projectTrigger = document.querySelectorAll('.project-trigger');
 
+projectTrigger.forEach(addTimeline);
 
+function addTimeline(project, index){
+    const image = project.querySelector(".project-image");
+    const text = project.querySelectorAll(".project-text");
+
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: project,
+            start:"center bottom",
+            ease:"power2.easeOut",
+            toggleActions: "play none none reverse",
+        }
+    })
+    .from(image,{
+        x:-200,
+        opacity:0,
+        duration:0.5
+    })
+    .from(text, {
+        x: 200,
+        opacity: 0,
+        duration: 0.5,
+        stagger: 0.2
+      }, "-=0.5");
+}
 
